@@ -3,7 +3,9 @@
     "allow": [
       "Bash(open:*)",
       "Bash(cp:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(gh auth:*)",
+      "Bash(brew install:*)"
     ]
   }
 }
