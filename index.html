@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breathing Focus Timer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Breathing Focus Timer</h1>
+
+    <div class="circle-wrapper">
+      <div id="breath-circle">
+        <p id="phase-label"></p>
+        <p id="phase-count"></p>
+      </div>
+    </div>
+
+    <p id="idle-hint">Set your pattern and press Start</p>
+
+    <div class="presets">
+      <button class="preset-btn active" data-preset="calm"  onclick="applyPreset('calm')">Calm</button>
+      <button class="preset-btn"        data-preset="focus" onclick="applyPreset('focus')">Focus</button>
+      <button class="preset-btn"        data-preset="relax" onclick="applyPreset('relax')">Relax</button>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="inhale-dur">Inhale</label>
+        <input type="number" id="inhale-dur" min="1" max="20" value="4" oninput="clearPresetHighlight()" />
+      </div>
+      <div class="control-group">
+        <label for="hold1-dur">Hold</label>
+        <input type="number" id="hold1-dur" min="0" max="20" value="4" oninput="clearPresetHighlight()" />
+      </div>
+      <div class="control-group">
+        <label for="exhale-dur">Exhale</label>
+        <input type="number" id="exhale-dur" min="1" max="20" value="4" oninput="clearPresetHighlight()" />
+      </div>
+      <div class="control-group">
+        <label for="hold2-dur">Hold</label>
+        <input type="number" id="hold2-dur" min="0" max="20" value="4" oninput="clearPresetHighlight()" />
+      </div>
+    </div>
+
+    <button id="main-btn" onclick="toggleBreathing()">Start</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
